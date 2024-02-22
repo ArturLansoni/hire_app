@@ -5,21 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "hire_app",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "hire_app (profile mode)",
+            "name": "hire_app - PROD",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "program": "lib/main.dart",
+            "args": [
+                "--flavor",
+                "prod",
+                "--target",
+                "lib/main.dart",
+            ]
         },
         {
-            "name": "hire_app (release mode)",
+            "name": "hire_app - DEV",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
-        }
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
+                "--target",
+                "lib/main_dev.dart",
+            ]
+        },
     ]
 }
