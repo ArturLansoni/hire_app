@@ -98,6 +98,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hire'**
   String get appTitle;
+
+  /// No description provided for @homePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get homePageTitle;
+
+  /// No description provided for @searchSectionInput.
+  ///
+  /// In en, this message translates to:
+  /// **'What you need?'**
+  String get searchSectionInput;
+
+  /// No description provided for @categoriesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get categoriesSectionTitle;
+
+  /// No description provided for @promotionsSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotions'**
+  String get promotionsSectionTitle;
+
+  /// No description provided for @lastOrdersSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Last orders'**
+  String get lastOrdersSectionTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

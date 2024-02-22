@@ -6,4 +6,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTitle => 'Hire';
+
+  @override
+  String get homePageTitle => 'Home';
+
+  @override
+  String get searchSectionInput => 'What you need?';
+
+  @override
+  String get categoriesSectionTitle => 'Categories';
+
+  @override
+  String get promotionsSectionTitle => 'Promotions';
+
+  @override
+  String get lastOrdersSectionTitle => 'Last orders';
 }
