@@ -3,7 +3,9 @@ import 'package:hire_app/core/config/app_configuration.dart';
 import 'package:hire_app/core/config/flavor.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/theme.dart';
+import 'package:hire_app/core/utils/routes.dart';
 import 'package:hire_app/features/home/presentation/pages/home.dart';
+import 'package:hire_app/features/login/presentation/pages/login.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -11,7 +13,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
       theme: appTheme,
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) {
@@ -23,6 +24,11 @@ class AppWidget extends StatelessWidget {
       },
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
+      initialRoute: Routes.login,
+      routes: {
+        Routes.login: (context) => const LoginPage(),
+        Routes.home: (context) => const HomePage(),
+      },
     );
   }
 }

@@ -128,6 +128,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Last orders'**
   String get lastOrdersSectionTitle;
+
+  /// No description provided for @loginPageEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get loginPageEmailLabel;
+
+  /// No description provided for @loginPagePasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get loginPagePasswordLabel;
+
+  /// No description provided for @loginPageSignInButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get loginPageSignInButton;
+
+  /// No description provided for @loginPageCreateAccountButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account? Register here'**
+  String get loginPageCreateAccountButton;
+
+  /// No description provided for @bottomSheetHomeTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get bottomSheetHomeTab;
+
+  /// No description provided for @bottomSheetUrgentTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent'**
+  String get bottomSheetUrgentTab;
+
+  /// No description provided for @bottomSheetScheduleTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get bottomSheetScheduleTab;
+
+  /// No description provided for @bottomSheetChatTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get bottomSheetChatTab;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In en, this message translates to:
+  /// **'Required field'**
+  String get requiredField;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email'**
+  String get invalidEmail;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

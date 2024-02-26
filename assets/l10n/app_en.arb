@@ -4,5 +4,15 @@
     "searchSectionInput": "What you need?",
     "categoriesSectionTitle": "Categories",
     "promotionsSectionTitle": "Promotions",
-    "lastOrdersSectionTitle": "Last orders"
+    "lastOrdersSectionTitle": "Last orders",
+    "loginPageEmailLabel": "Email",
+    "loginPagePasswordLabel": "Password",
+    "loginPageSignInButton": "Sign in",
+    "loginPageCreateAccountButton": "Don't have an account? Register here",
+    "bottomSheetHomeTab": "Home",
+    "bottomSheetUrgentTab": "Urgent",
+    "bottomSheetScheduleTab": "Schedule",
+    "bottomSheetChatTab": "Chat",
+    "requiredField": "Required field",
+    "invalidEmail": "Invalid email"
 }

@@ -21,4 +21,34 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get lastOrdersSectionTitle => 'Últimos pedidos';
+
+  @override
+  String get loginPageEmailLabel => 'Email';
+
+  @override
+  String get loginPagePasswordLabel => 'Senha';
+
+  @override
+  String get loginPageSignInButton => 'Entrar';
+
+  @override
+  String get loginPageCreateAccountButton => 'Não possui conta? Cadastre-se aqui';
+
+  @override
+  String get bottomSheetHomeTab => 'Início';
+
+  @override
+  String get bottomSheetUrgentTab => 'Urgente';
+
+  @override
+  String get bottomSheetScheduleTab => 'Agenda';
+
+  @override
+  String get bottomSheetChatTab => 'Chat';
+
+  @override
+  String get requiredField => 'Campo obrigatório';
+
+  @override
+  String get invalidEmail => 'Email inválido';
 }
