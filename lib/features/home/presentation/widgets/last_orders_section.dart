@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
+import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/features/home/domain/entities/service_entity.dart';
 import 'package:hire_app/features/home/presentation/widgets/service_item.dart';
 
 class LastOrdersSection extends StatelessWidget {
   const LastOrdersSection({super.key});
 
   static const services = [
-    Service(
+    ServiceEntity(
       name: 'Vegas Repairs',
       category: 'ELECTRICIAN',
       location: 'Las Vegas',
       rating: 4.9,
     ),
-    Service(
+    ServiceEntity(
       name: 'John clean everything',
       category: 'JANITOR',
       location: 'São Paulo',
       rating: 4,
     ),
-    Service(
+    ServiceEntity(
       name: 'Food & Drinks',
       category: 'CHEF',
       location: 'Madrid',
@@ -34,13 +36,16 @@ class LastOrdersSection extends StatelessWidget {
       children: [
         Text(
           l10n.lastOrdersSectionTitle,
-          style: const TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: Tokens.fontSize.ref16),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: Tokens.size.ref2),
         SizedBox(
+          height: Tokens.size.ref60,
           child: ListView.separated(
             shrinkWrap: true,
-            separatorBuilder: (context, index) => const SizedBox(height: 8),
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) =>
+                SizedBox(height: Tokens.size.ref2),
             itemBuilder: (context, index) => ServiceItem(
               name: services[index].name,
               category: services[index].category,
@@ -54,20 +59,4 @@ class LastOrdersSection extends StatelessWidget {
       ],
     );
   }
-}
-
-class Service {
-  const Service({
-    required this.name,
-    required this.location,
-    required this.category,
-    required this.rating,
-    this.imageURL,
-  });
-
-  final String name;
-  final String location;
-  final String category;
-  final double rating;
-  final String? imageURL;
 }

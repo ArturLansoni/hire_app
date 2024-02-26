@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
+import 'package:hire_app/core/styles/tokens.dart';
 
 class PromotionsSection extends StatelessWidget {
   const PromotionsSection({super.key});
@@ -12,18 +13,22 @@ class PromotionsSection extends StatelessWidget {
       children: [
         Text(
           l10n.promotionsSectionTitle,
-          style: const TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: Tokens.fontSize.ref16),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: Tokens.size.ref2),
         Container(
-          height: 120,
+          height: Tokens.size.ref30,
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(Tokens.radius.normal)),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-          child: const Column(
+          padding: EdgeInsets.symmetric(
+            vertical: Tokens.size.ref4,
+            horizontal: Tokens.size.ref3,
+          ),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,13 +36,13 @@ class PromotionsSection extends StatelessWidget {
                 '10% OFF',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: Tokens.fontSize.ref20,
                   color: Colors.black,
                 ),
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

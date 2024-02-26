@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
+import 'package:hire_app/core/styles/tokens.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
@@ -10,6 +11,7 @@ class SearchSection extends StatelessWidget {
 
     return Column(
       children: [
+        SizedBox(height: Tokens.size.ref3),
         TextField(
           decoration: InputDecoration(
             border: const OutlineInputBorder(),

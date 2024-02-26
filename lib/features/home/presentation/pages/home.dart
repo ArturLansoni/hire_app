@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
+import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/features/home/presentation/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,32 +23,44 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: Tokens.size.ref3),
           child: ListView(
-            children: const [
-              SearchSection(),
-              SizedBox(height: 12),
-              CategoriesSection(),
-              SizedBox(height: 12),
-              PromotionsSection(),
-              SizedBox(height: 12),
-              LastOrdersSection(),
+            children: [
+              const SearchSection(),
+              SizedBox(height: Tokens.size.ref3),
+              const CategoriesSection(),
+              SizedBox(height: Tokens.size.ref3),
+              const PromotionsSection(),
+              SizedBox(height: Tokens.size.ref3),
+              const LastOrdersSection(),
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        // fixedColor: Colors.black,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black38,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        selectedItemColor: Theme.of(context).colorScheme.primary,
+        unselectedItemColor: Theme.of(context)
+            .colorScheme
+            .primary
+            .withOpacity(Tokens.opacity.ref40),
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.crisis_alert), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.forum), label: 'Home'),
+            icon: const Icon(Icons.home),
+            label: l10n.bottomSheetHomeTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.crisis_alert),
+            label: l10n.bottomSheetUrgentTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.event),
+            label: l10n.bottomSheetScheduleTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.forum),
+            label: l10n.bottomSheetChatTab,
+          ),
         ],
       ),
     );
