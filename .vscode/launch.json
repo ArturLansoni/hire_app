@@ -10,10 +10,9 @@
             "type": "dart",
             "program": "lib/main.dart",
             "args": [
-                "--flavor",
-                "prod",
-                "--target",
-                "lib/main.dart",
+                "--flavor=prod",
+                "--target=lib/main.dart",
+                "--dart-define-from-file=config_prod.json"
             ]
         },
         {
@@ -22,10 +21,9 @@
             "type": "dart",
             "program": "lib/main_dev.dart",
             "args": [
-                "--flavor",
-                "dev",
-                "--target",
-                "lib/main_dev.dart",
+                "--flavor=dev",
+                "--target=lib/main_dev.dart",
+                "--dart-define-from-file=config_dev.json"
             ]
         },
     ]
