@@ -16,6 +16,7 @@ build/
 coverage/
 lib/generated_plugin_registrant.dart
 config_*.json
+.DS_Store
 # For library packages, don’t commit the pubspec.lock file.
 # Regenerating the pubspec.lock file lets you test your package against the latest compatible versions of its dependencies.
 # See https://dart.dev/guides/libraries/private-files#pubspeclock
@@ -71,3 +72,4 @@ config_*.json
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter
+
