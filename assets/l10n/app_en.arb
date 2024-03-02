@@ -9,10 +9,13 @@
     "loginPagePasswordLabel": "Password",
     "loginPageSignInButton": "Sign in",
     "loginPageCreateAccountButton": "Don't have an account? Register here",
-    "bottomSheetHomeTab": "Home",
-    "bottomSheetUrgentTab": "Urgent",
-    "bottomSheetScheduleTab": "Schedule",
-    "bottomSheetChatTab": "Chat",
+    "bottomNavHomeTab": "Home",
+    "bottomNavUrgentTab": "Urgent",
+    "bottomNavScheduleTab": "Schedule",
+    "bottomNavChatTab": "Chat",
     "requiredField": "Required field",
-    "invalidEmail": "Invalid email"
+    "invalidEmail": "Invalid email",
+    "invalidCredentialsError": "Invalid email or password",
+    "unknownError": "Oops, something went wrong, try again later",
+    "splashPageWelcome": "Welcome!"
 }

@@ -6,9 +6,11 @@ class Button extends StatefulWidget {
     required this.label,
     super.key,
     this.onPressed,
+    this.isLoading = false,
   });
 
   final String label;
+  final bool isLoading;
   final void Function()? onPressed;
 
   @override
@@ -28,13 +30,22 @@ class _ButtonState extends State<Button> {
             borderRadius: BorderRadius.circular(Tokens.radius.normal),
           ),
         ),
-        child: Text(
-          widget.label,
-          style: TextStyle(
-            fontSize: Tokens.size.ref4,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: widget.isLoading
+            ? SizedBox(
+                height: Tokens.size.ref6,
+                width: Tokens.size.ref6,
+                child: const CircularProgressIndicator(
+                  color: Colors.black,
+                  strokeWidth: 2,
+                ),
+              )
+            : Text(
+                widget.label,
+                style: TextStyle(
+                  fontSize: Tokens.size.ref4,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
       ),
     );
   }

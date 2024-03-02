@@ -35,20 +35,29 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loginPageCreateAccountButton => 'Não possui conta? Cadastre-se aqui';
 
   @override
-  String get bottomSheetHomeTab => 'Início';
+  String get bottomNavHomeTab => 'Início';
 
   @override
-  String get bottomSheetUrgentTab => 'Urgente';
+  String get bottomNavUrgentTab => 'Urgente';
 
   @override
-  String get bottomSheetScheduleTab => 'Agenda';
+  String get bottomNavScheduleTab => 'Agenda';
 
   @override
-  String get bottomSheetChatTab => 'Chat';
+  String get bottomNavChatTab => 'Chat';
 
   @override
   String get requiredField => 'Campo obrigatório';
 
   @override
   String get invalidEmail => 'Email inválido';
+
+  @override
+  String get invalidCredentialsError => 'E-mail ou senha inválidos';
+
+  @override
+  String get unknownError => 'Opa, algo deu errado, tente novamente mais tarde';
+
+  @override
+  String get splashPageWelcome => 'Seja bem vindo!';
 }

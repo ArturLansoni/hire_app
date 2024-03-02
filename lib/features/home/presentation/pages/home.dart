@@ -47,19 +47,19 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
             icon: const Icon(Icons.home),
-            label: l10n.bottomSheetHomeTab,
+            label: l10n.bottomNavHomeTab,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.crisis_alert),
-            label: l10n.bottomSheetUrgentTab,
+            label: l10n.bottomNavUrgentTab,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.event),
-            label: l10n.bottomSheetScheduleTab,
+            label: l10n.bottomNavScheduleTab,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.forum),
-            label: l10n.bottomSheetChatTab,
+            label: l10n.bottomNavChatTab,
           ),
         ],
       ),

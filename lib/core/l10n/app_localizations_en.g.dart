@@ -35,20 +35,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginPageCreateAccountButton => 'Don\'t have an account? Register here';
 
   @override
-  String get bottomSheetHomeTab => 'Home';
+  String get bottomNavHomeTab => 'Home';
 
   @override
-  String get bottomSheetUrgentTab => 'Urgent';
+  String get bottomNavUrgentTab => 'Urgent';
 
   @override
-  String get bottomSheetScheduleTab => 'Schedule';
+  String get bottomNavScheduleTab => 'Schedule';
 
   @override
-  String get bottomSheetChatTab => 'Chat';
+  String get bottomNavChatTab => 'Chat';
 
   @override
   String get requiredField => 'Required field';
 
   @override
   String get invalidEmail => 'Invalid email';
+
+  @override
+  String get invalidCredentialsError => 'Invalid email or password';
+
+  @override
+  String get unknownError => 'Oops, something went wrong, try again later';
+
+  @override
+  String get splashPageWelcome => 'Welcome!';
 }

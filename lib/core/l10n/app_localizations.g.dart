@@ -153,29 +153,29 @@ abstract class AppLocalizations {
   /// **'Don\'t have an account? Register here'**
   String get loginPageCreateAccountButton;
 
-  /// No description provided for @bottomSheetHomeTab.
+  /// No description provided for @bottomNavHomeTab.
   ///
   /// In en, this message translates to:
   /// **'Home'**
-  String get bottomSheetHomeTab;
+  String get bottomNavHomeTab;
 
-  /// No description provided for @bottomSheetUrgentTab.
+  /// No description provided for @bottomNavUrgentTab.
   ///
   /// In en, this message translates to:
   /// **'Urgent'**
-  String get bottomSheetUrgentTab;
+  String get bottomNavUrgentTab;
 
-  /// No description provided for @bottomSheetScheduleTab.
+  /// No description provided for @bottomNavScheduleTab.
   ///
   /// In en, this message translates to:
   /// **'Schedule'**
-  String get bottomSheetScheduleTab;
+  String get bottomNavScheduleTab;
 
-  /// No description provided for @bottomSheetChatTab.
+  /// No description provided for @bottomNavChatTab.
   ///
   /// In en, this message translates to:
   /// **'Chat'**
-  String get bottomSheetChatTab;
+  String get bottomNavChatTab;
 
   /// No description provided for @requiredField.
   ///
@@ -188,6 +188,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invalid email'**
   String get invalidEmail;
+
+  /// No description provided for @invalidCredentialsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email or password'**
+  String get invalidCredentialsError;
+
+  /// No description provided for @unknownError.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops, something went wrong, try again later'**
+  String get unknownError;
+
+  /// No description provided for @splashPageWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome!'**
+  String get splashPageWelcome;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

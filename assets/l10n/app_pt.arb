@@ -9,10 +9,13 @@
     "loginPagePasswordLabel": "Senha",
     "loginPageSignInButton": "Entrar",
     "loginPageCreateAccountButton": "Não possui conta? Cadastre-se aqui",
-    "bottomSheetHomeTab": "Início",
-    "bottomSheetUrgentTab": "Urgente",
-    "bottomSheetScheduleTab": "Agenda",
-    "bottomSheetChatTab": "Chat",
+    "bottomNavHomeTab": "Início",
+    "bottomNavUrgentTab": "Urgente",
+    "bottomNavScheduleTab": "Agenda",
+    "bottomNavChatTab": "Chat",
     "requiredField": "Campo obrigatório",
-    "invalidEmail": "Email inválido"
+    "invalidEmail": "Email inválido",
+    "invalidCredentialsError": "E-mail ou senha inválidos",
+    "unknownError": "Opa, algo deu errado, tente novamente mais tarde",
+    "splashPageWelcome": "Seja bem vindo!"
 }
