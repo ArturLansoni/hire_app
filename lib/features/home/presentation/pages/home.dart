@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/utils/routes.dart';
 import 'package:hire_app/features/home/presentation/widgets/widgets.dart';
+import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +21,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(l10n.homePageTitle),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+          IconButton(
+            onPressed: () {
+              context.read<AuthCubit>().signOut();
+              Navigator.of(context).popAndPushNamed(Routes.login);
+            },
+            icon: const Icon(Icons.logout),
+          ),
         ],
       ),
       body: SafeArea(

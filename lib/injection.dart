@@ -5,7 +5,7 @@ import 'package:hire_app/core/infra/auth/firebase_auth_impl.dart';
 import 'package:hire_app/features/onboarding/data/datasources/auth_datasource.dart';
 import 'package:hire_app/features/onboarding/data/datasources/firebase/auth_datasource_impl.dart';
 import 'package:hire_app/features/onboarding/data/repositories/auth_repository_impl.dart';
-import 'package:hire_app/features/onboarding/domain/cubits/login_cubit.dart';
+import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 import 'package:hire_app/features/onboarding/domain/repositories/auth_repository.dart';
 
 final appDI = GetIt.instance;
@@ -22,8 +22,8 @@ class AppInjection {
       ..registerFactory<AuthRepository>(
         () => FirebaseAuthRepositoryImpl(appDI<AuthDataSource>()),
       )
-      ..registerLazySingleton<LoginCubit>(
-        () => LoginCubit(appDI<AuthRepository>()),
+      ..registerLazySingleton<AuthCubit>(
+        () => AuthCubit(appDI<AuthRepository>()),
       );
   }
 }

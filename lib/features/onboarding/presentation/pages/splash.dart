@@ -4,7 +4,7 @@ import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/routes.dart';
 
-import 'package:hire_app/features/onboarding/domain/cubits/login_cubit.dart';
+import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -35,10 +35,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   }
 
   Future<void> _verifyIfUserIsLogged() async {
-    context.read<LoginCubit>().onLoad();
+    context.read<AuthCubit>().onLoad();
     await Future.delayed(const Duration(seconds: 2), () {});
     if (mounted) {
-      if (context.read<LoginCubit>().state is LoginSuccess) {
+      if (context.read<AuthCubit>().state.user != null) {
         await Navigator.of(context).popAndPushNamed(Routes.home);
       } else {
         await Navigator.of(context).popAndPushNamed(Routes.login);
@@ -83,6 +83,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                   .toList(),
             ),
             Text(l10n.splashPageWelcome),
+            Text(context.read<AuthCubit>().state.user?.email ?? ''),
           ],
         ),
       ),

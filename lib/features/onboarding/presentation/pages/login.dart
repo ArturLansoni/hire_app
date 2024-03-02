@@ -6,7 +6,7 @@ import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
 import 'package:hire_app/core/utils/extensions/string_extension.dart';
 import 'package:hire_app/core/utils/routes.dart';
-import 'package:hire_app/features/onboarding/domain/cubits/login_cubit.dart';
+import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 import 'package:hire_app/features/onboarding/presentation/widgets/button.dart';
 import 'package:hire_app/features/onboarding/presentation/widgets/error_snackbar.dart';
 import 'package:hire_app/features/onboarding/presentation/widgets/password_form_field.dart';
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    context.read<LoginCubit>().onLoad();
+    context.read<AuthCubit>().onLoad();
   }
 
   String? _emailValidator(String? value) {
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> _onSubmit() async {
     if (_formKey.currentState!.validate()) {
-      await context.read<LoginCubit>().signIn(
+      await context.read<AuthCubit>().signIn(
             _emailController.text,
             _passwordController.text,
           );
@@ -64,13 +64,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return BlocConsumer<LoginCubit, LoginState>(
+    return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is LoginSuccess) {
+        if (state.isSuccess) {
           TextInput.finishAutofillContext();
-          Navigator.of(context).pushNamed(Routes.home);
+          Navigator.of(context).popAndPushNamed(Routes.home);
         }
-        if (state is LoginError) {
+        if (state.isError) {
           if (state.error case InvalidParams()) {
             return _showSnackbar(l10n.invalidCredentialsError);
           }
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: Tokens.size.ref6),
                       Button(
-                        isLoading: state is LoginLoading,
+                        isLoading: state.isLoading,
                         onPressed: _onSubmit,
                         label: l10n.loginPageSignInButton,
                       ),
