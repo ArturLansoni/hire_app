@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hire_app/app_widget.dart';
 import 'package:hire_app/core/config/firebase_options.dart';
+import 'package:hire_app/injection.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  AppInjection.initialize();
 
   await Future.wait([
     Firebase.initializeApp(

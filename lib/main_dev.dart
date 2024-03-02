@@ -7,11 +7,13 @@ import 'package:hire_app/core/config/app_configuration.dart';
 import 'package:hire_app/core/config/firebase_options.dart';
 import 'package:hire_app/core/config/flavor.dart';
 import 'package:hire_app/core/utils/cubit_observer.dart';
+import 'package:hire_app/injection.dart';
 
 void main() async {
   AppConfiguration.flavor = Flavor.dev;
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = CubitObserver();
+  AppInjection.initialize();
 
   await Future.wait([
     Firebase.initializeApp(
