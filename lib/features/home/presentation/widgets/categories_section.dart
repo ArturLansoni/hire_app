@@ -3,7 +3,12 @@ import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/features/home/presentation/widgets/category_item.dart';
 
 class CategoriesSection extends StatelessWidget {
-  const CategoriesSection({super.key});
+  const CategoriesSection({
+    required this.onTap,
+    super.key,
+  });
+
+  final void Function() onTap;
 
   static const categories = [
     Category(title: 'Electrician', icon: Icons.electric_bolt),
@@ -30,7 +35,7 @@ class CategoriesSection extends StatelessWidget {
             itemBuilder: (context, index) => CategoryItem(
               text: categories[index].title,
               icon: categories[index].icon,
-              onTap: () {},
+              onTap: onTap,
             ),
             itemCount: categories.length,
           ),

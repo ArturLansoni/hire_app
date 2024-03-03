@@ -8,7 +8,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Hire';
 
   @override
-  String get homePageTitle => 'Home';
+  String get homePageTitle => 'Services';
 
   @override
   String get searchSectionInput => 'What you need?';
@@ -35,7 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginPageCreateAccountButton => 'Don\'t have an account? Register here';
 
   @override
-  String get bottomNavHomeTab => 'Home';
+  String get bottomNavHomeTab => 'Services';
 
   @override
   String get bottomNavUrgentTab => 'Urgent';
@@ -60,4 +60,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get splashPageWelcome => 'Welcome!';
+
+  @override
+  String get unavailableFeature => 'This feature will be available soon';
 }

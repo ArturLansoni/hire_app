@@ -1,38 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/widgets/clickable.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({
     required this.text,
     required this.icon,
+    required this.onTap,
     super.key,
-    this.onTap,
   });
 
   final String text;
   final IconData icon;
-  final VoidCallback? onTap;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return Clickable(
       onTap: onTap,
-      child: Container(
-        height: 120,
-        width: 200,
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primary,
+        borderRadius: BorderRadius.all(Radius.circular(Tokens.radius.normal)),
+      ),
+      padding: EdgeInsets.symmetric(
+        vertical: Tokens.size.ref4,
+        horizontal: Tokens.size.ref3,
+      ),
+      child: SizedBox(
+        height: Tokens.size.ref30,
+        width: Tokens.size.ref50,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: Tokens.fontSize.ref20,
                 color: Colors.black,
               ),
             ),
@@ -41,7 +46,7 @@ class CategoryItem extends StatelessWidget {
               child: Icon(
                 icon,
                 color: Colors.black,
-                size: 56,
+                size: Tokens.size.ref12,
               ),
             ),
           ],

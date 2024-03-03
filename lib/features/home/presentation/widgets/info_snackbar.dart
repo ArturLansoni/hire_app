@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 
-class ErrorSnackBar extends SnackBar {
-  ErrorSnackBar({
+class InfoSnackBar extends SnackBar {
+  InfoSnackBar({
     required String message,
     super.key,
   }) : super(
           content: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(
-                Icons.clear,
-                color: Colors.red,
+                Icons.info,
+                color: Colors.black,
               ),
               SizedBox(width: Tokens.size.ref1),
               Expanded(

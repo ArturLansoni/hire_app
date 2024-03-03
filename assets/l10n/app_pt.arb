@@ -1,6 +1,6 @@
 {
     "appTitle": "Hire",
-    "homePageTitle": "Início",
+    "homePageTitle": "Serviços",
     "searchSectionInput": "Do que você precisa?",
     "categoriesSectionTitle": "Categorias",
     "promotionsSectionTitle": "Promoções",
@@ -9,7 +9,7 @@
     "loginPagePasswordLabel": "Senha",
     "loginPageSignInButton": "Entrar",
     "loginPageCreateAccountButton": "Não possui conta? Cadastre-se aqui",
-    "bottomNavHomeTab": "Início",
+    "bottomNavHomeTab": "Serviços",
     "bottomNavUrgentTab": "Urgente",
     "bottomNavScheduleTab": "Agenda",
     "bottomNavChatTab": "Chat",
@@ -17,5 +17,6 @@
     "invalidEmail": "Email inválido",
     "invalidCredentialsError": "E-mail ou senha inválidos",
     "unknownError": "Opa, algo deu errado, tente novamente mais tarde",
-    "splashPageWelcome": "Seja bem vindo!"
+    "splashPageWelcome": "Seja bem vindo!",
+    "unavailableFeature": "Esse recurso estará disponível em breve"
 }

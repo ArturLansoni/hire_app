@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/widgets/clickable.dart';
 
 class ServiceItem extends StatelessWidget {
   const ServiceItem({
@@ -6,6 +8,7 @@ class ServiceItem extends StatelessWidget {
     required this.name,
     required this.location,
     required this.rating,
+    required this.onTap,
     super.key,
     this.imageURL,
   });
@@ -15,53 +18,74 @@ class ServiceItem extends StatelessWidget {
   final String location;
   final double rating;
   final String? imageURL;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Clickable(
+      onTap: onTap,
+      color: Theme.of(context).colorScheme.primary,
+      padding: EdgeInsets.all(Tokens.size.ref3),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        borderRadius: BorderRadius.circular(Tokens.radius.normal),
       ),
-      padding: const EdgeInsets.all(12),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(Tokens.size.ref12),
               color: Colors.black,
             ),
-            height: 50,
-            width: 50,
+            height: Tokens.size.ref12,
+            width: Tokens.size.ref12,
           ),
-          const SizedBox(width: 8),
+          SizedBox(width: Tokens.size.ref2),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                name,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: Tokens.fontSize.ref14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(width: Tokens.size.ref1),
+                  Icon(
+                    Icons.star,
+                    color: Colors.black,
+                    size: Tokens.size.ref3,
+                  ),
+                  Text(
+                    rating.toString(),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: Tokens.fontSize.ref10,
+                    ),
+                  ),
+                ],
               ),
               Text(
                 location,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12,
+                  fontSize: Tokens.fontSize.ref10,
                 ),
               ),
             ],
           ),
           const Spacer(),
           Text(
-            category,
-            style: const TextStyle(
+            category.toUpperCase(),
+            style: TextStyle(
               color: Colors.black,
-              fontSize: 8,
+              fontSize: Tokens.fontSize.ref10,
               fontWeight: FontWeight.bold,
             ),
           ),

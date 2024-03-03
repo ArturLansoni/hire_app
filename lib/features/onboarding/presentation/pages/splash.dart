@@ -83,7 +83,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                   .toList(),
             ),
             Text(l10n.splashPageWelcome),
-            Text(context.read<AuthCubit>().state.user?.email ?? ''),
           ],
         ),
       ),

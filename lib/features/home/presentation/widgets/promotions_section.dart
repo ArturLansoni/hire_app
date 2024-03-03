@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/widgets/clickable.dart';
 
 class PromotionsSection extends StatelessWidget {
-  const PromotionsSection({super.key});
+  const PromotionsSection({
+    required this.onTap,
+    super.key,
+  });
+
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +22,8 @@ class PromotionsSection extends StatelessWidget {
           style: TextStyle(fontSize: Tokens.fontSize.ref16),
         ),
         SizedBox(height: Tokens.size.ref2),
-        Container(
-          height: Tokens.size.ref30,
-          width: double.maxFinite,
+        Clickable(
+          onTap: onTap,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             borderRadius:
@@ -28,19 +33,23 @@ class PromotionsSection extends StatelessWidget {
             vertical: Tokens.size.ref4,
             horizontal: Tokens.size.ref3,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '10% OFF',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: Tokens.fontSize.ref20,
-                  color: Colors.black,
+          child: SizedBox(
+            height: Tokens.size.ref30,
+            width: double.maxFinite,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '10% OFF',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: Tokens.fontSize.ref20,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

@@ -5,7 +5,14 @@ import 'package:hire_app/features/home/domain/entities/service_entity.dart';
 import 'package:hire_app/features/home/presentation/widgets/service_item.dart';
 
 class LastOrdersSection extends StatelessWidget {
-  const LastOrdersSection({super.key});
+  const LastOrdersSection({
+    required this.filter,
+    required this.onTap,
+    super.key,
+  });
+
+  final String filter;
+  final void Function(ServiceEntity service) onTap;
 
   static const services = [
     ServiceEntity(
@@ -26,7 +33,22 @@ class LastOrdersSection extends StatelessWidget {
       location: 'Madrid',
       rating: 4.2,
     ),
+    ServiceEntity(
+      name: 'Jay barber',
+      category: 'BARBER',
+      location: 'Campinas',
+      rating: 3.5,
+    ),
+    ServiceEntity(
+      name: 'Dwight',
+      category: 'OFFICE',
+      location: 'Scranton',
+      rating: 4.8,
+    ),
   ];
+
+  bool _filter(ServiceEntity element) =>
+      element.name.trim().toLowerCase().contains(filter.trim().toLowerCase());
 
   @override
   Widget build(BuildContext context) {
@@ -40,20 +62,23 @@ class LastOrdersSection extends StatelessWidget {
         ),
         SizedBox(height: Tokens.size.ref2),
         SizedBox(
-          height: Tokens.size.ref60,
           child: ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) =>
                 SizedBox(height: Tokens.size.ref2),
-            itemBuilder: (context, index) => ServiceItem(
-              name: services[index].name,
-              category: services[index].category,
-              imageURL: services[index].imageURL,
-              location: services[index].location,
-              rating: services[index].rating,
-            ),
-            itemCount: services.length,
+            itemBuilder: (context, index) {
+              final service = services.where(_filter).toList()[index];
+              return ServiceItem(
+                onTap: () => onTap(service),
+                name: service.name,
+                category: service.category,
+                imageURL: service.imageURL,
+                location: service.location,
+                rating: service.rating,
+              );
+            },
+            itemCount: services.where(_filter).length,
           ),
         ),
       ],

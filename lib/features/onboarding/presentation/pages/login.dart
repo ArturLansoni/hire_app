@@ -56,9 +56,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _showSnackbar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      ErrorSnackBar(message: message),
-    );
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        ErrorSnackBar(message: message),
+      );
   }
 
   @override

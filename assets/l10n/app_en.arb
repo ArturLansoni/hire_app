@@ -1,6 +1,6 @@
 {
     "appTitle": "Hire",
-    "homePageTitle": "Home",
+    "homePageTitle": "Services",
     "searchSectionInput": "What you need?",
     "categoriesSectionTitle": "Categories",
     "promotionsSectionTitle": "Promotions",
@@ -9,7 +9,7 @@
     "loginPagePasswordLabel": "Password",
     "loginPageSignInButton": "Sign in",
     "loginPageCreateAccountButton": "Don't have an account? Register here",
-    "bottomNavHomeTab": "Home",
+    "bottomNavHomeTab": "Services",
     "bottomNavUrgentTab": "Urgent",
     "bottomNavScheduleTab": "Schedule",
     "bottomNavChatTab": "Chat",
@@ -17,5 +17,6 @@
     "invalidEmail": "Invalid email",
     "invalidCredentialsError": "Invalid email or password",
     "unknownError": "Oops, something went wrong, try again later",
-    "splashPageWelcome": "Welcome!"
+    "splashPageWelcome": "Welcome!",
+    "unavailableFeature": "This feature will be available soon"
 }

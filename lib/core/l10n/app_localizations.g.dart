@@ -102,7 +102,7 @@ abstract class AppLocalizations {
   /// No description provided for @homePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Home'**
+  /// **'Services'**
   String get homePageTitle;
 
   /// No description provided for @searchSectionInput.
@@ -156,7 +156,7 @@ abstract class AppLocalizations {
   /// No description provided for @bottomNavHomeTab.
   ///
   /// In en, this message translates to:
-  /// **'Home'**
+  /// **'Services'**
   String get bottomNavHomeTab;
 
   /// No description provided for @bottomNavUrgentTab.
@@ -206,6 +206,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome!'**
   String get splashPageWelcome;
+
+  /// No description provided for @unavailableFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature will be available soon'**
+  String get unavailableFeature;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
