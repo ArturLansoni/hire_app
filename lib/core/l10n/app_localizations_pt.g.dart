@@ -20,7 +20,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get promotionsSectionTitle => 'Promoções';
 
   @override
-  String get lastOrdersSectionTitle => 'Últimos pedidos';
+  String get availableCompaniesSectionTitle => 'Empresas disponíveis neste momento';
 
   @override
   String get loginPageEmailLabel => 'Email';
@@ -63,4 +63,40 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unavailableFeature => 'Esse recurso estará disponível em breve';
+
+  @override
+  String get orderPageAvailableServices => 'Serviços disponíveis';
+
+  @override
+  String get orderPageDescribe => 'Descreva o que você precisa';
+
+  @override
+  String get orderPageSubmitButton => 'Solicitar';
+
+  @override
+  String get timeSectionSelectDate => 'Escolha a data';
+
+  @override
+  String get timeSectionSelectHour => 'Escolha o horário';
+
+  @override
+  String get sunday => 'Dom';
+
+  @override
+  String get monday => 'Seg';
+
+  @override
+  String get tuesday => 'Ter';
+
+  @override
+  String get wednesday => 'Qua';
+
+  @override
+  String get thursday => 'Qui';
+
+  @override
+  String get friday => 'Sex';
+
+  @override
+  String get saturday => 'Sab';
 }

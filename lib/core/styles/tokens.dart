@@ -19,8 +19,10 @@ class SizeTokens {
   double get ref3 => multiplier * 3;
   double get ref4 => multiplier * 4;
   double get ref6 => multiplier * 6;
+  double get ref9 => multiplier * 9;
   double get ref12 => multiplier * 12;
   double get ref16 => multiplier * 16;
+  double get ref18 => multiplier * 18;
   double get ref30 => multiplier * 30;
   double get ref50 => multiplier * 50;
   double get ref60 => multiplier * 60;

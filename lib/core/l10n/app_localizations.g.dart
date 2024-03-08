@@ -123,11 +123,11 @@ abstract class AppLocalizations {
   /// **'Promotions'**
   String get promotionsSectionTitle;
 
-  /// No description provided for @lastOrdersSectionTitle.
+  /// No description provided for @availableCompaniesSectionTitle.
   ///
   /// In en, this message translates to:
-  /// **'Last orders'**
-  String get lastOrdersSectionTitle;
+  /// **'Companies available right now'**
+  String get availableCompaniesSectionTitle;
 
   /// No description provided for @loginPageEmailLabel.
   ///
@@ -212,6 +212,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This feature will be available soon'**
   String get unavailableFeature;
+
+  /// No description provided for @orderPageAvailableServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Available services'**
+  String get orderPageAvailableServices;
+
+  /// No description provided for @orderPageDescribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what you need'**
+  String get orderPageDescribe;
+
+  /// No description provided for @orderPageSubmitButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Request'**
+  String get orderPageSubmitButton;
+
+  /// No description provided for @timeSectionSelectDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose date'**
+  String get timeSectionSelectDate;
+
+  /// No description provided for @timeSectionSelectHour.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the time'**
+  String get timeSectionSelectHour;
+
+  /// No description provided for @sunday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun'**
+  String get sunday;
+
+  /// No description provided for @monday.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon'**
+  String get monday;
+
+  /// No description provided for @tuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Tue'**
+  String get tuesday;
+
+  /// No description provided for @wednesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Wed'**
+  String get wednesday;
+
+  /// No description provided for @thursday.
+  ///
+  /// In en, this message translates to:
+  /// **'Thu'**
+  String get thursday;
+
+  /// No description provided for @friday.
+  ///
+  /// In en, this message translates to:
+  /// **'Fri'**
+  String get friday;
+
+  /// No description provided for @saturday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sat'**
+  String get saturday;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

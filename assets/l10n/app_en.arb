@@ -4,7 +4,7 @@
     "searchSectionInput": "What you need?",
     "categoriesSectionTitle": "Categories",
     "promotionsSectionTitle": "Promotions",
-    "lastOrdersSectionTitle": "Last orders",
+    "availableCompaniesSectionTitle": "Companies available right now",
     "loginPageEmailLabel": "Email",
     "loginPagePasswordLabel": "Password",
     "loginPageSignInButton": "Sign in",
@@ -18,5 +18,17 @@
     "invalidCredentialsError": "Invalid email or password",
     "unknownError": "Oops, something went wrong, try again later",
     "splashPageWelcome": "Welcome!",
-    "unavailableFeature": "This feature will be available soon"
+    "unavailableFeature": "This feature will be available soon",
+    "orderPageAvailableServices": "Available services",
+    "orderPageDescribe": "Describe what you need",
+    "orderPageSubmitButton": "Request",
+    "timeSectionSelectDate": "Choose date",
+    "timeSectionSelectHour": "Choose the time",
+    "sunday": "Sun",
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat"
 }

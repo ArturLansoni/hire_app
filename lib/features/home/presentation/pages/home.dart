@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/routes.dart';
-import 'package:hire_app/features/home/domain/entities/service_entity.dart';
+import 'package:hire_app/features/home/domain/entities/company_entity.dart';
 import 'package:hire_app/features/home/presentation/widgets/info_snackbar.dart';
 import 'package:hire_app/features/home/presentation/widgets/widgets.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
@@ -56,14 +56,18 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               SizedBox(height: Tokens.size.ref3),
-              LastOrdersSection(
+              AvailableCompaniesSection(
                 filter: _search,
-                onTap: (ServiceEntity service) =>
-                    _showSnackbar(l10n.unavailableFeature),
+                onTap: (CompanyEntity company) {
+                  Navigator.of(context).pushNamed(
+                    Routes.order,
+                    arguments: {'company': company},
+                  );
+                },
               ),
               SizedBox(height: Tokens.size.ref3),
               CategoriesSection(
-                onTap: () {},
+                onTap: () => _showSnackbar(l10n.unavailableFeature),
               ),
               SizedBox(height: Tokens.size.ref3),
               PromotionsSection(

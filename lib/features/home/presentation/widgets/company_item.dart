@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/widgets/avatar.dart';
 import 'package:hire_app/core/widgets/clickable.dart';
 
-class ServiceItem extends StatelessWidget {
-  const ServiceItem({
+class CompanyItem extends StatelessWidget {
+  const CompanyItem({
     required this.category,
     required this.name,
     required this.location,
@@ -33,14 +34,7 @@ class ServiceItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Tokens.size.ref12),
-              color: Colors.black,
-            ),
-            height: Tokens.size.ref12,
-            width: Tokens.size.ref12,
-          ),
+          Avatar(imageURL: imageURL, name: name),
           SizedBox(width: Tokens.size.ref2),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -4,7 +4,7 @@
     "searchSectionInput": "Do que você precisa?",
     "categoriesSectionTitle": "Categorias",
     "promotionsSectionTitle": "Promoções",
-    "lastOrdersSectionTitle": "Últimos pedidos",
+    "availableCompaniesSectionTitle": "Empresas disponíveis neste momento",
     "loginPageEmailLabel": "Email",
     "loginPagePasswordLabel": "Senha",
     "loginPageSignInButton": "Entrar",
@@ -18,5 +18,17 @@
     "invalidCredentialsError": "E-mail ou senha inválidos",
     "unknownError": "Opa, algo deu errado, tente novamente mais tarde",
     "splashPageWelcome": "Seja bem vindo!",
-    "unavailableFeature": "Esse recurso estará disponível em breve"
+    "unavailableFeature": "Esse recurso estará disponível em breve",
+    "orderPageAvailableServices": "Serviços disponíveis",
+    "orderPageDescribe": "Descreva o que você precisa",
+    "orderPageSubmitButton": "Solicitar",
+    "timeSectionSelectDate": "Escolha a data",
+    "timeSectionSelectHour": "Escolha o horário",
+    "sunday": "Dom",
+    "monday": "Seg",
+    "tuesday": "Ter",
+    "wednesday": "Qua",
+    "thursday": "Qui",
+    "friday": "Sex",
+    "saturday": "Sab"
 }

@@ -1,15 +1,13 @@
 class ServiceEntity {
   const ServiceEntity({
     required this.name,
-    required this.location,
-    required this.category,
-    required this.rating,
-    this.imageURL,
+    required this.initialRange,
+    required this.finalRange,
+    this.imagesURL = const [],
   });
 
   final String name;
-  final String location;
-  final String category;
-  final double rating;
-  final String? imageURL;
+  final double initialRange;
+  final double finalRange;
+  final List<String> imagesURL;
 }

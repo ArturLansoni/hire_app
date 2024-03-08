@@ -21,13 +21,15 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _verifyIfUserIsLogged();
-    for (final i in titleRange) {
+    for (final _ in titleRange) {
       _controllers.add(
         AnimationController(
           duration: const Duration(seconds: 1),
           vsync: this,
         ),
       );
+    }
+    for (final i in titleRange) {
       Future.delayed(Duration(milliseconds: 100 * i), () {
         _controllers[i].forward();
       });
