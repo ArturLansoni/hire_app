@@ -12,8 +12,8 @@ class TimeSection extends StatefulWidget {
     super.key,
   });
 
-  final void Function(DateTime date) onSelectDate;
-  final void Function(int hour) onSelectHour;
+  final void Function(DateTime? date) onSelectDate;
+  final void Function(int? hour) onSelectHour;
   @override
   State<TimeSection> createState() => _TimeSectionState();
 }
@@ -27,13 +27,13 @@ class _TimeSectionState extends State<TimeSection> {
   void setSelectedDate(int index) {
     final newValue = index == _selectedDate ? null : index;
     setState(() => _selectedDate = newValue);
-    widget.onSelectDate(_dateInterval[index]);
+    widget.onSelectDate(newValue == null ? null : _dateInterval[newValue]);
   }
 
   void setSelectedHour(int index) {
     final newValue = index == _selectedHour ? null : index;
     setState(() => _selectedHour = newValue);
-    widget.onSelectHour(_hoursInterval[index]);
+    widget.onSelectHour(newValue == null ? null : _hoursInterval[newValue]);
   }
 
   @override

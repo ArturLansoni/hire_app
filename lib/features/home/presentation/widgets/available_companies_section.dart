@@ -50,11 +50,13 @@ class AvailableCompaniesSection extends StatelessWidget {
       imageURL: 'https://tm.ibxk.com.br/2023/07/11/11171223585362.jpg',
       services: [
         ServiceEntity(
+          id: '1',
           name: 'Vigilancia noturna',
           initialRange: 100,
           finalRange: 200,
         ),
         ServiceEntity(
+          id: '2',
           name: 'Controle de pragas',
           initialRange: 100,
           finalRange: 200,
