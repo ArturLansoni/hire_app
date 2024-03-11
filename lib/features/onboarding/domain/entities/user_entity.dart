@@ -1,5 +1,5 @@
-class UserEntity {
-  UserEntity({
+final class UserEntity {
+  const UserEntity({
     required this.id,
     required this.email,
     this.name,

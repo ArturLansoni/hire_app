@@ -1,6 +1,6 @@
 import 'package:hire_app/features/home/domain/entities/service_entity.dart';
 
-class CompanyEntity {
+final class CompanyEntity {
   const CompanyEntity({
     required this.name,
     required this.location,
