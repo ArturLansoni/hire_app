@@ -1,12 +1,12 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hire_app/core/utils/async_state.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
 import 'package:hire_app/features/onboarding/domain/entities/user_entity.dart';
 import 'package:hire_app/features/onboarding/domain/repositories/auth_repository.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit(this.repository) : super(const AuthState(AuthStatus.initial));
+  AuthCubit(this.repository) : super(const AuthState(AsyncStatus.initial));
 
   final AuthRepository repository;
 
@@ -20,7 +20,7 @@ class AuthCubit extends Cubit<AuthState> {
     String password,
   ) async {
     if (state.isLoading) return;
-    emit(state.copyWith(status: AuthStatus.loading));
+    emit(state.copyWith(status: AsyncStatus.loading));
 
     final result = await repository.signIn(email, password);
     emit(result);
@@ -28,7 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> signOut() async {
     if (state.isLoading) return;
-    emit(state.copyWith(status: AuthStatus.loading));
+    emit(state.copyWith(status: AsyncStatus.loading));
 
     final result = await repository.signOut();
     emit(result);

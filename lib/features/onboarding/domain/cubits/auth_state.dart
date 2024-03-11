@@ -1,25 +1,17 @@
 part of 'auth_cubit.dart';
 
-enum AuthStatus { initial, loading, success, error }
-
-class AuthState extends Equatable {
+final class AuthState extends AsyncState {
   const AuthState(
-    this.status, {
+    AsyncStatus status, {
     this.user,
     this.error,
-  });
+  }) : super(status: status);
 
-  final AuthStatus status;
   final UserEntity? user;
   final Failure? error;
 
-  bool get isInitial => status == AuthStatus.initial;
-  bool get isLoading => status == AuthStatus.loading;
-  bool get isSuccess => status == AuthStatus.success;
-  bool get isError => status == AuthStatus.error;
-
   AuthState copyWith({
-    AuthStatus? status,
+    AsyncStatus? status,
     UserEntity? user,
     Failure? error,
   }) {

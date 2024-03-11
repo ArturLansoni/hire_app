@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hire_app/core/utils/async_state.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
 import 'package:hire_app/features/onboarding/data/datasources/auth_datasource.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
@@ -14,17 +15,17 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   Future<AuthState> signIn(String email, String password) async {
     try {
       await dataSource.signIn(email, password);
-      return const AuthState(AuthStatus.success);
+      return const AuthState(AsyncStatus.success);
     } on FirebaseAuthException catch (e) {
       return switch (e.code) {
         'invalid-credentials' ||
         'invalid-email' ||
         'wrong-password' =>
-          AuthState(AuthStatus.error, error: InvalidParams()),
-        _ => AuthState(AuthStatus.error, error: Failure()),
+          AuthState(AsyncStatus.error, error: InvalidParams()),
+        _ => AuthState(AsyncStatus.error, error: Failure()),
       };
     } catch (e) {
-      return AuthState(AuthStatus.error, error: Failure());
+      return AuthState(AsyncStatus.error, error: Failure());
     }
   }
 
@@ -32,9 +33,9 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   AuthState getCurrentUser() {
     try {
       final user = dataSource.getCurrentUser();
-      return AuthState(AuthStatus.initial, user: user);
+      return AuthState(AsyncStatus.initial, user: user);
     } catch (_) {
-      return const AuthState(AuthStatus.initial);
+      return const AuthState(AsyncStatus.initial);
     }
   }
 
@@ -48,9 +49,9 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   Future<AuthState> signOut() async {
     try {
       await dataSource.signOut();
-      return const AuthState(AuthStatus.success);
+      return const AuthState(AsyncStatus.success);
     } catch (_) {
-      return const AuthState(AuthStatus.initial);
+      return const AuthState(AsyncStatus.initial);
     }
   }
 }
