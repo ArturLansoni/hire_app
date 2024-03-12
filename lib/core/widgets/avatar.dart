@@ -12,14 +12,16 @@ class Avatar extends StatelessWidget {
   final String? imageURL;
   final double? size;
 
+  bool get hasImage => imageURL != null && (imageURL?.isNotEmpty ?? false);
+
   @override
   Widget build(BuildContext context) {
     final radius = size ?? Tokens.size.ref6;
     return CircleAvatar(
       radius: radius,
       backgroundColor: Colors.black,
-      backgroundImage: imageURL != null ? NetworkImage(imageURL!) : null,
-      child: imageURL == null
+      backgroundImage: hasImage ? NetworkImage(imageURL!) : null,
+      child: !hasImage
           ? Text(
               name.split(' ').map((l) => l[0]).take(2).join().toUpperCase(),
               style: TextStyle(

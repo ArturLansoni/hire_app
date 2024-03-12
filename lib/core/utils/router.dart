@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/utils/routes.dart';
+import 'package:hire_app/features/home/domain/cubits/home_cubit.dart';
 import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
 import 'package:hire_app/features/home/presentation/pages/home.dart';
@@ -22,8 +23,11 @@ class AppRouter {
           value: appDI<AuthCubit>(),
           child: const LoginPage(),
         ),
-    Routes.home: (context) => BlocProvider.value(
-          value: appDI<AuthCubit>(),
+    Routes.home: (context) => MultiBlocProvider(
+          providers: [
+            BlocProvider.value(value: appDI<AuthCubit>()),
+            BlocProvider.value(value: appDI<HomeCubit>()),
+          ],
           child: const HomePage(),
         ),
     Routes.order: (context) {

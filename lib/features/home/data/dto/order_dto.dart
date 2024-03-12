@@ -3,9 +3,9 @@ import 'package:hire_app/features/home/domain/entities/order_entity.dart';
 
 extension OrderDTO on OrderEntity {
   static OrderEntity fromFirebase(
-    QueryDocumentSnapshot<Map<String, dynamic>> firebaseOrder,
+    DocumentSnapshot<Map<String, dynamic>> firebaseOrder,
   ) {
-    final order = firebaseOrder.data();
+    final order = firebaseOrder.data()!;
     return OrderEntity(
       id: firebaseOrder.id,
       date: (order['date'] as Timestamp).toDate(),

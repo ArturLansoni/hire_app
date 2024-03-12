@@ -5,10 +5,15 @@ import 'package:hire_app/core/infra/auth/auth_adapter.dart';
 import 'package:hire_app/core/infra/auth/firebase_auth_impl.dart';
 import 'package:hire_app/core/infra/database/database_adapter.dart';
 import 'package:hire_app/core/infra/database/firestore_impl.dart';
+import 'package:hire_app/features/home/data/datasources/company_datasource.dart';
+import 'package:hire_app/features/home/data/datasources/firestore/company_datasource_impl.dart';
 import 'package:hire_app/features/home/data/datasources/firestore/order_datasource_impl.dart';
 import 'package:hire_app/features/home/data/datasources/order_datasource.dart';
+import 'package:hire_app/features/home/data/repositories/company_repository_impl.dart';
 import 'package:hire_app/features/home/data/repositories/order_repository_impl.dart';
+import 'package:hire_app/features/home/domain/cubits/home_cubit.dart';
 import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
+import 'package:hire_app/features/home/domain/repositories/company_repository.dart';
 import 'package:hire_app/features/home/domain/repositories/order_repository.dart';
 import 'package:hire_app/features/onboarding/data/datasources/auth_datasource.dart';
 import 'package:hire_app/features/onboarding/data/datasources/firebase/auth_datasource_impl.dart';
@@ -38,6 +43,9 @@ class AppInjection {
 
   static void _cubits() {
     appDI
+      ..registerLazySingleton<HomeCubit>(
+        () => HomeCubit(appDI<CompanyRepository>()),
+      )
       ..registerLazySingleton<OrderCubit>(
         () => OrderCubit(
           auth: appDI<AuthCubit>(),
@@ -51,6 +59,9 @@ class AppInjection {
 
   static void _repositories() {
     appDI
+      ..registerFactory<CompanyRepository>(
+        () => CompanyRepositoryImpl(appDI<CompanyDataSource>()),
+      )
       ..registerFactory<OrderRepository>(
         () => OrderRepositoryImpl(appDI<OrderDataSource>()),
       )
@@ -61,6 +72,9 @@ class AppInjection {
 
   static void _datasources() {
     appDI
+      ..registerFactory<CompanyDataSource>(
+        () => FirestoreCompanyDataSourceImpl(appDI<DatabaseAdapter>()),
+      )
       ..registerFactory<OrderDataSource>(
         () => FirestoreOrderDataSourceImpl(appDI<DatabaseAdapter>()),
       )
