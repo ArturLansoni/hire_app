@@ -2,14 +2,12 @@ part of 'auth_cubit.dart';
 
 final class AuthState extends AsyncState {
   const AuthState(
-    AsyncStatus status, {
+    super.status, {
+    super.error,
     this.user,
-    this.error,
-  }) : super(status: status);
+  });
 
   final UserEntity? user;
-  final Failure? error;
-
   AuthState copyWith({
     AsyncStatus? status,
     UserEntity? user,
