@@ -39,7 +39,7 @@ class ServiceItem extends StatelessWidget {
               Text(
                 name,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Tokens.colors.background,
                   fontSize: Tokens.fontSize.ref14,
                   fontWeight: FontWeight.bold,
                 ),
@@ -47,7 +47,7 @@ class ServiceItem extends StatelessWidget {
               Text(
                 'R\$ $initialRange - R\$ $finalRange',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Tokens.colors.background,
                   fontSize: Tokens.fontSize.ref10,
                 ),
               ),

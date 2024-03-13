@@ -38,14 +38,14 @@ class CategoryItem extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: Tokens.fontSize.ref20,
-                color: Colors.black,
+                color: Tokens.colors.background,
               ),
             ),
             Align(
               alignment: Alignment.bottomRight,
               child: Icon(
                 icon,
-                color: Colors.black,
+                color: Tokens.colors.background,
                 size: Tokens.size.ref12,
               ),
             ),

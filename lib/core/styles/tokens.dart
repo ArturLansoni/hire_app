@@ -1,8 +1,19 @@
+import 'package:flutter/material.dart';
+
 class Tokens {
-  static const RadiusTokens radius = RadiusTokens._();
+  static const ColorTokens colors = ColorTokens._();
   static const SizeTokens size = SizeTokens._();
-  static const FontSizeTokens fontSize = FontSizeTokens._();
+  static const RadiusTokens radius = RadiusTokens._();
   static const OpacityTokens opacity = OpacityTokens._();
+  static const FontSizeTokens fontSize = FontSizeTokens._();
+}
+
+class ColorTokens {
+  const ColorTokens._();
+  Color get primary => const Color(0xffD0BCFF);
+  Color get error => const Color(0xffB3261E);
+  Color get background => const Color(0xff141218);
+  Color get white => const Color(0xffffffff);
 }
 
 class RadiusTokens {

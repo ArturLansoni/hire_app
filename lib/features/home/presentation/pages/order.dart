@@ -115,8 +115,8 @@ class _OrderPageState extends State<OrderPage> {
                               ),
                               child: Text(
                                 widget.company.category.toUpperCase(),
-                                style: const TextStyle(
-                                  color: Colors.black,
+                                style: TextStyle(
+                                  color: Tokens.colors.background,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

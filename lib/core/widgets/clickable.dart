@@ -23,7 +23,7 @@ class Clickable extends StatelessWidget {
       decoration: decoration,
       child: InkWell(
         borderRadius: BorderRadius.circular(Tokens.radius.normal),
-        splashColor: Colors.black.withOpacity(0.3),
+        splashColor: Tokens.colors.background.withOpacity(0.3),
         onTap: onTap,
         child: Padding(
           padding: padding ?? EdgeInsets.zero,

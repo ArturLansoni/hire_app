@@ -48,7 +48,7 @@ class TimeItem extends StatelessWidget {
             Text(
               top,
               style: TextStyle(
-                color: Colors.black,
+                color: Tokens.colors.background,
                 fontSize: Tokens.fontSize.ref20,
                 fontWeight: FontWeight.bold,
               ),
@@ -56,7 +56,7 @@ class TimeItem extends StatelessWidget {
             Text(
               bottom,
               style: TextStyle(
-                color: Colors.black,
+                color: Tokens.colors.background,
                 fontSize: Tokens.fontSize.ref14,
               ),
             ),

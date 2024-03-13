@@ -45,7 +45,7 @@ class PromotionsSection extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Tokens.fontSize.ref20,
-                    color: Colors.black,
+                    color: Tokens.colors.background,
                   ),
                 ),
               ],

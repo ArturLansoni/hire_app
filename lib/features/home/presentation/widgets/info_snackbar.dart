@@ -9,9 +9,9 @@ class InfoSnackBar extends SnackBar {
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(
+              Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Tokens.colors.background,
               ),
               SizedBox(width: Tokens.size.ref1),
               Expanded(

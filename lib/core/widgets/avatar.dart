@@ -19,14 +19,14 @@ class Avatar extends StatelessWidget {
     final radius = size ?? Tokens.size.ref6;
     return CircleAvatar(
       radius: radius,
-      backgroundColor: Colors.black,
+      backgroundColor: Tokens.colors.background,
       backgroundImage: hasImage ? NetworkImage(imageURL!) : null,
       child: !hasImage
           ? Text(
               name.split(' ').map((l) => l[0]).take(2).join().toUpperCase(),
               style: TextStyle(
                 fontSize: radius / 2,
-                color: Colors.white,
+                color: Tokens.colors.white,
               ),
             )
           : null,

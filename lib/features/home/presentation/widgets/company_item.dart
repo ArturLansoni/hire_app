@@ -44,7 +44,7 @@ class CompanyItem extends StatelessWidget {
                   Text(
                     name,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Tokens.colors.background,
                       fontSize: Tokens.fontSize.ref14,
                       fontWeight: FontWeight.bold,
                     ),
@@ -52,13 +52,13 @@ class CompanyItem extends StatelessWidget {
                   SizedBox(width: Tokens.size.ref1),
                   Icon(
                     Icons.star,
-                    color: Colors.black,
+                    color: Tokens.colors.background,
                     size: Tokens.size.ref3,
                   ),
                   Text(
                     rating.toString(),
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Tokens.colors.background,
                       fontWeight: FontWeight.bold,
                       fontSize: Tokens.fontSize.ref10,
                     ),
@@ -68,7 +68,7 @@ class CompanyItem extends StatelessWidget {
               Text(
                 location,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Tokens.colors.background,
                   fontSize: Tokens.fontSize.ref10,
                 ),
               ),
@@ -78,7 +78,7 @@ class CompanyItem extends StatelessWidget {
           Text(
             category.toUpperCase(),
             style: TextStyle(
-              color: Colors.black,
+              color: Tokens.colors.background,
               fontSize: Tokens.fontSize.ref10,
               fontWeight: FontWeight.bold,
             ),

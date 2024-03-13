@@ -34,8 +34,8 @@ class _ButtonState extends State<Button> {
             ? SizedBox(
                 height: Tokens.size.ref6,
                 width: Tokens.size.ref6,
-                child: const CircularProgressIndicator(
-                  color: Colors.black,
+                child: CircularProgressIndicator(
+                  color: Tokens.colors.background,
                   strokeWidth: 2,
                 ),
               )

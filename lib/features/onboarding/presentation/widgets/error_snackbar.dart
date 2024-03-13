@@ -8,9 +8,9 @@ class ErrorSnackBar extends SnackBar {
   }) : super(
           content: Row(
             children: [
-              const Icon(
+              Icon(
                 Icons.clear,
-                color: Colors.red,
+                color: Tokens.colors.error,
               ),
               SizedBox(width: Tokens.size.ref1),
               Expanded(
