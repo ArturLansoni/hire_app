@@ -33,4 +33,15 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await repository.signOut();
     emit(result);
   }
+
+  Future<void> register(
+    String email,
+    String password,
+  ) async {
+    if (state.isLoading) return;
+    emit(state.copyWith(status: AsyncStatus.loading));
+
+    final result = await repository.create(email, password);
+    emit(result);
+  }
 }

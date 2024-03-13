@@ -147,11 +147,59 @@ abstract class AppLocalizations {
   /// **'Sign in'**
   String get loginPageSignInButton;
 
+  /// No description provided for @loginPageCreateAccountText.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get loginPageCreateAccountText;
+
   /// No description provided for @loginPageCreateAccountButton.
   ///
   /// In en, this message translates to:
-  /// **'Don\'t have an account? Register here'**
+  /// **'Register here'**
   String get loginPageCreateAccountButton;
+
+  /// No description provided for @registerPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get registerPageTitle;
+
+  /// No description provided for @registerPagePasswordConfirmationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get registerPagePasswordConfirmationLabel;
+
+  /// No description provided for @registerPageWelcomeFirstPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to '**
+  String get registerPageWelcomeFirstPart;
+
+  /// No description provided for @registerPageWelcomeLastPart.
+  ///
+  /// In en, this message translates to:
+  /// **', create your user here'**
+  String get registerPageWelcomeLastPart;
+
+  /// No description provided for @registerPageSubmitButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get registerPageSubmitButton;
+
+  /// No description provided for @registerPageLoginFirstPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have a user?'**
+  String get registerPageLoginFirstPart;
+
+  /// No description provided for @registerPageLoginLastPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Login here'**
+  String get registerPageLoginLastPart;
 
   /// No description provided for @bottomNavHomeTab.
   ///
@@ -182,6 +230,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Required field'**
   String get requiredField;
+
+  /// No description provided for @passwordDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordDoNotMatch;
+
+  /// No description provided for @passwordStrengthLength.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must have more than 8 characters'**
+  String get passwordStrengthLength;
+
+  /// No description provided for @passwordStrengthLowercase.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must have lowercase letters'**
+  String get passwordStrengthLowercase;
+
+  /// No description provided for @passwordStrengthUppercase.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must have uppercase letters'**
+  String get passwordStrengthUppercase;
+
+  /// No description provided for @passwordStrengthNumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must have numbers'**
+  String get passwordStrengthNumbers;
+
+  /// No description provided for @passwordStrengthSpecial.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must have special characters'**
+  String get passwordStrengthSpecial;
 
   /// No description provided for @invalidEmail.
   ///

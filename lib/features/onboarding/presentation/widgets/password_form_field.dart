@@ -36,6 +36,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
       onChanged: widget.onChanged,
       onFieldSubmitted: widget.onFieldSubmitted,
       keyboardType: TextInputType.visiblePassword,
+      obscuringCharacter: '*',
       autofillHints: const [AutofillHints.password],
       textInputAction: widget.textInputAction,
       validator: widget.validator,

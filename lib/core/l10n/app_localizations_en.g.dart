@@ -32,7 +32,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginPageSignInButton => 'Sign in';
 
   @override
-  String get loginPageCreateAccountButton => 'Don\'t have an account? Register here';
+  String get loginPageCreateAccountText => 'Don\'t have an account?';
+
+  @override
+  String get loginPageCreateAccountButton => 'Register here';
+
+  @override
+  String get registerPageTitle => 'Register';
+
+  @override
+  String get registerPagePasswordConfirmationLabel => 'Confirm password';
+
+  @override
+  String get registerPageWelcomeFirstPart => 'Welcome to ';
+
+  @override
+  String get registerPageWelcomeLastPart => ', create your user here';
+
+  @override
+  String get registerPageSubmitButton => 'Register';
+
+  @override
+  String get registerPageLoginFirstPart => 'Already have a user?';
+
+  @override
+  String get registerPageLoginLastPart => 'Login here';
 
   @override
   String get bottomNavHomeTab => 'Services';
@@ -48,6 +72,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get requiredField => 'Required field';
+
+  @override
+  String get passwordDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get passwordStrengthLength => 'The password must have more than 8 characters';
+
+  @override
+  String get passwordStrengthLowercase => 'The password must have lowercase letters';
+
+  @override
+  String get passwordStrengthUppercase => 'The password must have uppercase letters';
+
+  @override
+  String get passwordStrengthNumbers => 'The password must have numbers';
+
+  @override
+  String get passwordStrengthSpecial => 'The password must have special characters';
 
   @override
   String get invalidEmail => 'Invalid email';

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
-import 'package:hire_app/core/utils/extensions/string_extension.dart';
 import 'package:hire_app/core/utils/routes.dart';
+import 'package:hire_app/core/utils/validators.dart';
 import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 import 'package:hire_app/features/onboarding/presentation/widgets/password_form_field.dart';
@@ -26,23 +26,6 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     context.read<AuthCubit>().onLoad();
-  }
-
-  String? _emailValidator(String? value) {
-    if (value?.isEmpty ?? true) {
-      return AppLocalizations.of(context)!.requiredField;
-    }
-    if (!value!.isValidEmail()) {
-      return AppLocalizations.of(context)!.invalidEmail;
-    }
-    return null;
-  }
-
-  String? _passwordValidator(String? value) {
-    if (value?.isEmpty ?? true) {
-      return AppLocalizations.of(context)!.requiredField;
-    }
-    return null;
   }
 
   Future<void> _onSubmit() async {
@@ -105,13 +88,15 @@ class _LoginPageState extends State<LoginPage> {
                           border: const OutlineInputBorder(),
                           labelText: l10n.loginPageEmailLabel,
                         ),
-                        validator: _emailValidator,
+                        validator: (value) =>
+                            Validators.email(value, l10n: l10n),
                       ),
                       SizedBox(height: Tokens.size.ref3),
                       PasswordFormField(
                         label: l10n.loginPagePasswordLabel,
                         controller: _passwordController,
-                        validator: _passwordValidator,
+                        validator: (value) =>
+                            Validators.password(value, l10n: l10n),
                         onFieldSubmitted: (_) => _onSubmit(),
                         textInputAction: TextInputAction.done,
                       ),
@@ -124,15 +109,27 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    l10n.loginPageCreateAccountButton,
-                    style: TextStyle(
-                      fontSize: Tokens.fontSize.ref16,
-                      decoration: TextDecoration.underline,
+                Column(
+                  children: [
+                    Text(
+                      l10n.loginPageCreateAccountText,
+                      style: TextStyle(
+                        fontSize: Tokens.fontSize.ref16,
+                      ),
                     ),
-                  ),
+                    SizedBox(height: Tokens.size.ref1),
+                    InkWell(
+                      onTap: () =>
+                          Navigator.of(context).pushNamed(Routes.register),
+                      child: Text(
+                        l10n.loginPageCreateAccountButton,
+                        style: TextStyle(
+                          fontSize: Tokens.fontSize.ref16,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

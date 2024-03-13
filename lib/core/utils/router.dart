@@ -9,6 +9,7 @@ import 'package:hire_app/features/home/presentation/pages/home.dart';
 import 'package:hire_app/features/home/presentation/pages/order.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 import 'package:hire_app/features/onboarding/presentation/pages/login.dart';
+import 'package:hire_app/features/onboarding/presentation/pages/register.dart';
 import 'package:hire_app/features/onboarding/presentation/pages/splash.dart';
 import 'package:hire_app/injection.dart';
 
@@ -22,6 +23,10 @@ class AppRouter {
     Routes.login: (context) => BlocProvider.value(
           value: appDI<AuthCubit>(),
           child: const LoginPage(),
+        ),
+    Routes.register: (context) => BlocProvider.value(
+          value: appDI<AuthCubit>(),
+          child: const RegisterPage(),
         ),
     Routes.home: (context) => MultiBlocProvider(
           providers: [

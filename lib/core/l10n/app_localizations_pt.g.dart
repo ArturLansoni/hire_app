@@ -32,7 +32,31 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loginPageSignInButton => 'Entrar';
 
   @override
-  String get loginPageCreateAccountButton => 'Não possui conta? Cadastre-se aqui';
+  String get loginPageCreateAccountText => 'Não possui conta?';
+
+  @override
+  String get loginPageCreateAccountButton => 'Cadastre-se aqui';
+
+  @override
+  String get registerPageTitle => 'Cadastre-se';
+
+  @override
+  String get registerPagePasswordConfirmationLabel => 'Senha';
+
+  @override
+  String get registerPageWelcomeFirstPart => 'Bem-vindo ao ';
+
+  @override
+  String get registerPageWelcomeLastPart => ', crie seu usuário aqui';
+
+  @override
+  String get registerPageSubmitButton => 'Cadastrar';
+
+  @override
+  String get registerPageLoginFirstPart => 'Já tem um usuário?';
+
+  @override
+  String get registerPageLoginLastPart => 'Entre aqui';
 
   @override
   String get bottomNavHomeTab => 'Serviços';
@@ -48,6 +72,24 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get requiredField => 'Campo obrigatório';
+
+  @override
+  String get passwordDoNotMatch => 'As senhas não correspondem';
+
+  @override
+  String get passwordStrengthLength => 'A senha deve ter mais de 8 caracteres';
+
+  @override
+  String get passwordStrengthLowercase => 'A senha deve conter letras minúsculas';
+
+  @override
+  String get passwordStrengthUppercase => 'A senha deve conter letras maiúsculas';
+
+  @override
+  String get passwordStrengthNumbers => 'A senha deve conter números';
+
+  @override
+  String get passwordStrengthSpecial => 'A senha deve conter caracteres especiais';
 
   @override
   String get invalidEmail => 'Email inválido';

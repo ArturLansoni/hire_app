@@ -40,9 +40,14 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<AuthState> create(String email, String password) {
-    // TODO: implement create
-    throw UnimplementedError();
+  Future<AuthState> create(String email, String password) async {
+    try {
+      await dataSource.create(email, password);
+      final user = dataSource.getCurrentUser();
+      return AuthState(AsyncStatus.success, user: user);
+    } catch (_) {
+      return const AuthState(AsyncStatus.error);
+    }
   }
 
   @override

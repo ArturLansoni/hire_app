@@ -30,6 +30,7 @@ class SizeTokens {
   double get ref3 => multiplier * 3;
   double get ref4 => multiplier * 4;
   double get ref6 => multiplier * 6;
+  double get ref8 => multiplier * 8;
   double get ref9 => multiplier * 9;
   double get ref12 => multiplier * 12;
   double get ref16 => multiplier * 16;
@@ -48,6 +49,7 @@ class FontSizeTokens {
   double get ref14 => 14;
   double get ref16 => 16;
   double get ref20 => 20;
+  double get ref28 => 28;
   double get ref64 => 64;
 }
 
