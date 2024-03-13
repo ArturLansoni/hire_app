@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/extensions/int_extension.dart';
 import 'package:hire_app/core/utils/generate_future_dates.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/home/presentation/widgets/order/widgets.dart';
 
 class TimeSection extends StatefulWidget {
@@ -10,8 +13,12 @@ class TimeSection extends StatefulWidget {
     required this.onSelectDate,
     required this.onSelectHour,
     super.key,
+    this.dateValidator,
+    this.hourValidator,
   });
 
+  final FormFieldValidator<DateTime>? dateValidator;
+  final FormFieldValidator<int>? hourValidator;
   final void Function(DateTime? date) onSelectDate;
   final void Function(int? hour) onSelectHour;
   @override
@@ -57,10 +64,9 @@ class _TimeSectionState extends State<TimeSection> {
         Text(l10n.timeSectionSelectDate),
         SizedBox(height: Tokens.size.ref2),
         SizedBox(
-          height: Tokens.size.ref18,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (_, index) {
+          height: Tokens.size.ref24,
+          child: TimeFormField(
+            itemBuilder: (index) {
               final item = _dateInterval[index];
               return TimeItem(
                 top: item.day.pad(),
@@ -69,20 +75,16 @@ class _TimeSectionState extends State<TimeSection> {
                 isSelected: _selectedDate == null || index == _selectedDate,
               );
             },
-            separatorBuilder: (_, index) {
-              return SizedBox(width: Tokens.size.ref1);
-            },
             itemCount: _dateInterval.length,
+            validator: widget.dateValidator ?? (_) => null,
           ),
         ),
-        SizedBox(height: Tokens.size.ref3),
         Text(l10n.timeSectionSelectHour),
         SizedBox(height: Tokens.size.ref2),
         SizedBox(
-          height: Tokens.size.ref18,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (_, index) {
+          height: Tokens.size.ref24,
+          child: TimeFormField(
+            itemBuilder: (index) {
               final item = _hoursInterval[index];
               return TimeItem(
                 top: item.pad(),
@@ -91,10 +93,8 @@ class _TimeSectionState extends State<TimeSection> {
                 isSelected: _selectedHour == null || index == _selectedHour,
               );
             },
-            separatorBuilder: (_, index) {
-              return SizedBox(width: Tokens.size.ref1);
-            },
             itemCount: _hoursInterval.length,
+            validator: widget.hourValidator ?? (_) => null,
           ),
         ),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
@@ -20,6 +21,7 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
+  final _formKey = GlobalKey<FormState>();
   final _controller = TextEditingController();
   late List<bool> _selectedServices;
   DateTime? _selectedDate;
@@ -33,6 +35,8 @@ class _OrderPageState extends State<OrderPage> {
   }
 
   void _onSubmit() {
+    if (!_formKey.currentState!.validate()) return;
+
     final serviceIds = <String>[];
     for (var i = 0; i < _selectedServices.length; i++) {
       if (_selectedServices[i]) {
@@ -76,99 +80,123 @@ class _OrderPageState extends State<OrderPage> {
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Avatar(
-                              name: widget.company.name,
-                              imageURL: widget.company.imageURL,
-                              size: Tokens.size.ref9,
-                            ),
-                            SizedBox(width: Tokens.size.ref2),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(widget.company.location),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.star),
-                                    SizedBox(width: Tokens.size.ref1),
-                                    Text(widget.company.rating.toString()),
-                                  ],
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Avatar(
+                                name: widget.company.name,
+                                imageURL: widget.company.imageURL,
+                                size: Tokens.size.ref9,
+                              ),
+                              SizedBox(width: Tokens.size.ref2),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(widget.company.location),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.star),
+                                      SizedBox(width: Tokens.size.ref1),
+                                      Text(widget.company.rating.toString()),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Tokens.colors.primary,
+                                  borderRadius: BorderRadius.circular(
+                                      Tokens.radius.normal),
                                 ),
-                              ],
-                            ),
-                            const Spacer(),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Tokens.colors.primary,
-                                borderRadius:
-                                    BorderRadius.circular(Tokens.radius.normal),
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                vertical: Tokens.size.ref1,
-                                horizontal: Tokens.size.ref2,
-                              ),
-                              child: Text(
-                                widget.company.category.toUpperCase(),
-                                style: TextStyle(
-                                  color: Tokens.colors.background,
-                                  fontWeight: FontWeight.bold,
+                                padding: EdgeInsets.symmetric(
+                                  vertical: Tokens.size.ref1,
+                                  horizontal: Tokens.size.ref2,
+                                ),
+                                child: Text(
+                                  widget.company.category.toUpperCase(),
+                                  style: TextStyle(
+                                    color: Tokens.colors.background,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                        Text(l10n.orderPageAvailableServices),
-                        SizedBox(height: Tokens.size.ref2),
-                        ListView.separated(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          separatorBuilder: (context, index) =>
-                              SizedBox(height: Tokens.size.ref2),
-                          itemBuilder: (context, index) {
-                            final service = widget.company.services[index];
-                            return ServiceItem(
-                              name: service.name,
-                              initialRange: service.initialRange,
-                              finalRange: service.finalRange,
-                              imagesURL: service.imagesURL,
-                              onTap: () {
-                                setState(
-                                  () => _selectedServices[index] =
-                                      !_selectedServices[index],
-                                );
-                              },
-                              isSelected: _selectedServices[index],
-                            );
-                          },
-                          itemCount: widget.company.services.length,
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                        Text(l10n.orderPageDescribe),
-                        SizedBox(height: Tokens.size.ref2),
-                        TextField(
-                          controller: _controller,
-                          maxLines: 3,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
+                            ],
                           ),
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                        TimeSection(
-                          onSelectDate: (DateTime? date) {
-                            setState(() => _selectedDate = date);
-                          },
-                          onSelectHour: (int? hour) {
-                            setState(() => _selectedHour = hour);
-                          },
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                      ],
+                          SizedBox(height: Tokens.size.ref3),
+                          Text(l10n.orderPageAvailableServices),
+                          SizedBox(height: Tokens.size.ref2),
+                          ListView.separated(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            separatorBuilder: (context, index) =>
+                                SizedBox(height: Tokens.size.ref2),
+                            itemBuilder: (context, index) {
+                              final service = widget.company.services[index];
+                              return ServiceItem(
+                                name: service.name,
+                                initialRange: service.initialRange,
+                                finalRange: service.finalRange,
+                                imagesURL: service.imagesURL,
+                                onTap: () {
+                                  setState(
+                                    () => _selectedServices[index] =
+                                        !_selectedServices[index],
+                                  );
+                                },
+                                isSelected: _selectedServices[index],
+                              );
+                            },
+                            itemCount: widget.company.services.length,
+                          ),
+                          SizedBox(height: Tokens.size.ref3),
+                          Text(l10n.orderPageDescribe),
+                          SizedBox(height: Tokens.size.ref2),
+                          SizedBox(
+                            height: Tokens.size.ref30,
+                            child: TextFormField(
+                              controller: _controller,
+                              maxLines: 3,
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                              ),
+                              validator: (value) {
+                                if (value?.isEmpty ?? false) {
+                                  return l10n.requiredField;
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
+                          SizedBox(height: Tokens.size.ref3),
+                          TimeSection(
+                            dateValidator: (value) {
+                              if (_selectedDate == null) {
+                                return l10n.requiredField;
+                              }
+                              return null;
+                            },
+                            hourValidator: (value) {
+                              if (_selectedHour == null) {
+                                return l10n.requiredField;
+                              }
+                              return null;
+                            },
+                            onSelectDate: (date) {
+                              setState(() => _selectedDate = date);
+                            },
+                            onSelectHour: (hour) {
+                              setState(() => _selectedHour = hour);
+                            },
+                          ),
+                          SizedBox(height: Tokens.size.ref3),
+                        ],
+                      ),
                     ),
                   ),
                   SliverFillRemaining(
