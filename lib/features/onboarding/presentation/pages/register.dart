@@ -74,11 +74,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         children: [
                           TextSpan(
-                              text: l10n.appTitle,
-                              style: TextStyle(
-                                fontSize: Tokens.fontSize.ref28,
-                                fontWeight: FontWeight.bold,
-                              )),
+                            text: l10n.appTitle,
+                            style: TextStyle(
+                              fontSize: Tokens.fontSize.ref28,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           TextSpan(text: l10n.registerPageWelcomeLastPart),
                         ],
                       ),
@@ -158,5 +159,13 @@ class _RegisterPageState extends State<RegisterPage> {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _passwordConfirmationController.dispose();
+    super.dispose();
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
@@ -112,7 +111,8 @@ class _OrderPageState extends State<OrderPage> {
                                 decoration: BoxDecoration(
                                   color: Tokens.colors.primary,
                                   borderRadius: BorderRadius.circular(
-                                      Tokens.radius.normal),
+                                    Tokens.radius.normal,
+                                  ),
                                 ),
                                 padding: EdgeInsets.symmetric(
                                   vertical: Tokens.size.ref1,
