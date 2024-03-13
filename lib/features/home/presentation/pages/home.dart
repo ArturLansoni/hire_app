@@ -103,11 +103,9 @@ class _HomePageState extends State<HomePage> {
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Theme.of(context).colorScheme.primary,
-            unselectedItemColor: Theme.of(context)
-                .colorScheme
-                .primary
-                .withOpacity(Tokens.opacity.ref40),
+            selectedItemColor: Tokens.colors.primary,
+            unselectedItemColor:
+                Tokens.colors.primary.withOpacity(Tokens.opacity.ref40),
             items: [
               BottomNavigationBarItem(
                 icon: const Icon(Icons.home),

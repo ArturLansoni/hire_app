@@ -104,7 +104,7 @@ class _OrderPageState extends State<OrderPage> {
                             const Spacer(),
                             Container(
                               decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Tokens.colors.primary,
                                 borderRadius:
                                     BorderRadius.circular(Tokens.radius.normal),
                               ),

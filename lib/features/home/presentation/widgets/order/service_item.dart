@@ -25,7 +25,7 @@ class ServiceItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(Tokens.size.ref3),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Tokens.colors.primary,
         borderRadius: BorderRadius.circular(Tokens.radius.normal),
       ),
       child: Row(

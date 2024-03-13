@@ -19,7 +19,7 @@ class CategoryItem extends StatelessWidget {
     return Clickable(
       onTap: onTap,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Tokens.colors.primary,
         borderRadius: BorderRadius.all(Radius.circular(Tokens.radius.normal)),
       ),
       padding: EdgeInsets.symmetric(

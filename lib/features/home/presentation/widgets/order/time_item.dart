@@ -21,18 +21,12 @@ class TimeItem extends StatelessWidget {
     return Clickable(
       onTap: onTap,
       color: isSelected
-          ? Theme.of(context).colorScheme.primary
-          : Theme.of(context)
-              .colorScheme
-              .primary
-              .withOpacity(Tokens.opacity.ref40),
+          ? Tokens.colors.primary
+          : Tokens.colors.primary.withOpacity(Tokens.opacity.ref40),
       decoration: BoxDecoration(
         color: isSelected
-            ? Theme.of(context).colorScheme.primary
-            : Theme.of(context)
-                .colorScheme
-                .primary
-                .withOpacity(Tokens.opacity.ref40),
+            ? Tokens.colors.primary
+            : Tokens.colors.primary.withOpacity(Tokens.opacity.ref40),
         borderRadius: BorderRadius.circular(
           Tokens.radius.normal,
         ),

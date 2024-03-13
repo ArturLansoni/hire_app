@@ -24,10 +24,10 @@ class CompanyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Clickable(
       onTap: onTap,
-      color: Theme.of(context).colorScheme.primary,
+      color: Tokens.colors.primary,
       padding: EdgeInsets.all(Tokens.size.ref3),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Tokens.colors.primary,
         borderRadius: BorderRadius.circular(Tokens.radius.normal),
       ),
       child: Row(
