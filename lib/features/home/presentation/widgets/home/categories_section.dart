@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
-import 'package:hire_app/features/home/presentation/widgets/category_item.dart';
+import 'package:hire_app/features/home/presentation/widgets/home/widgets.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({

@@ -6,9 +6,8 @@ import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
 import 'package:hire_app/core/utils/extensions/string_extension.dart';
 import 'package:hire_app/core/utils/routes.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
-import 'package:hire_app/features/onboarding/presentation/widgets/button.dart';
-import 'package:hire_app/features/onboarding/presentation/widgets/error_snackbar.dart';
 import 'package:hire_app/features/onboarding/presentation/widgets/password_form_field.dart';
 
 class LoginPage extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
-import 'package:hire_app/features/home/presentation/widgets/company_item.dart';
+import 'package:hire_app/features/home/presentation/widgets/home/widgets.dart';
 
 class AvailableCompaniesSection extends StatelessWidget {
   const AvailableCompaniesSection({

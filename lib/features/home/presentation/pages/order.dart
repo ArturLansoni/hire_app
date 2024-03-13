@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
-import 'package:hire_app/core/widgets/avatar.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
 import 'package:hire_app/features/home/presentation/widgets/order/widgets.dart';
-import 'package:hire_app/features/onboarding/presentation/widgets/button.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({

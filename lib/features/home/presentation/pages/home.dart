@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
 import 'package:hire_app/core/utils/routes.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/home/domain/cubits/home_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
-import 'package:hire_app/features/home/presentation/widgets/info_snackbar.dart';
-import 'package:hire_app/features/home/presentation/widgets/widgets.dart';
+import 'package:hire_app/features/home/presentation/widgets/home/widgets.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
-import 'package:hire_app/features/onboarding/presentation/widgets/error_snackbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

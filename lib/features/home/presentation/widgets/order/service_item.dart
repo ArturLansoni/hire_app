@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/styles/tokens.dart';
-import 'package:hire_app/core/widgets/avatar.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 
 class ServiceItem extends StatelessWidget {
   const ServiceItem({

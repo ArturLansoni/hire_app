@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hire_app/core/styles/tokens.dart';
-import 'package:hire_app/core/widgets/clickable.dart';
+import 'package:hire_app/core/widgets/widgets.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({
