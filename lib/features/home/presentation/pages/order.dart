@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/utils/extensions/navigator_state_extension.dart';
+import 'package:hire_app/core/utils/routes.dart';
 import 'package:hire_app/core/widgets/widgets.dart';
 import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
+import 'package:hire_app/features/home/domain/entities/service_entity.dart';
 import 'package:hire_app/features/home/presentation/widgets/order/widgets.dart';
 
 class OrderPage extends StatefulWidget {
@@ -36,10 +39,10 @@ class _OrderPageState extends State<OrderPage> {
   void _onSubmit() {
     if (!_formKey.currentState!.validate()) return;
 
-    final serviceIds = <String>[];
+    final services = <ServiceEntity>[];
     for (var i = 0; i < _selectedServices.length; i++) {
       if (_selectedServices[i]) {
-        serviceIds.add(widget.company.services[i].id);
+        services.add(widget.company.services[i]);
       }
     }
     final date = DateTime(
@@ -49,14 +52,9 @@ class _OrderPageState extends State<OrderPage> {
       _selectedHour!,
     );
 
-    debugPrint('''
- $date
- ${_controller.text} 
- $serviceIds 
- ''');
     context.read<OrderCubit>().createOrder(
           date: date,
-          serviceIds: serviceIds,
+          services: services,
           description: _controller.text,
         );
   }
@@ -67,7 +65,9 @@ class _OrderPageState extends State<OrderPage> {
     return BlocConsumer<OrderCubit, OrderState>(
       listener: (context, state) {
         if (state.isSuccess) {
-          Navigator.of(context).pop();
+          Navigator.of(context)
+            ..pop()
+            ..navigate(Routes.schedule);
         }
       },
       builder: (context, state) {

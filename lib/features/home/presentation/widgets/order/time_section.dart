@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/utils/extensions/date_extension.dart';
 import 'package:hire_app/core/utils/extensions/int_extension.dart';
 import 'package:hire_app/core/utils/generate_future_dates.dart';
 import 'package:hire_app/core/widgets/widgets.dart';
@@ -46,18 +47,6 @@ class _TimeSectionState extends State<TimeSection> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    String getWeekdayName(int index) {
-      return switch (index) {
-        1 => l10n.monday,
-        2 => l10n.tuesday,
-        3 => l10n.wednesday,
-        4 => l10n.thursday,
-        5 => l10n.friday,
-        6 => l10n.saturday,
-        _ => l10n.sunday,
-      };
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -70,7 +59,7 @@ class _TimeSectionState extends State<TimeSection> {
               final item = _dateInterval[index];
               return TimeItem(
                 top: item.day.pad(),
-                bottom: getWeekdayName(item.weekday),
+                bottom: item.weekdayName(l10n),
                 onTap: () => setSelectedDate(index),
                 isSelected: _selectedDate == null || index == _selectedDate,
               );

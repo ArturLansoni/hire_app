@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/utils/extensions/navigator_state_extension.dart';
 import 'package:hire_app/core/utils/routes.dart';
 import 'package:hire_app/core/utils/validators.dart';
 import 'package:hire_app/core/widgets/widgets.dart';
@@ -46,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
       listener: (context, state) {
         if (state.isSuccess) {
           TextInput.finishAutofillContext();
-          Navigator.of(context).popAndPushNamed(Routes.home);
+          Navigator.of(context).navigate(Routes.home);
         }
         if (state.isError) {
           _showSnackbar(l10n.unknownError);

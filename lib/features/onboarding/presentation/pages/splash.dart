@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/l10n/app_localizations.g.dart';
 import 'package:hire_app/core/styles/tokens.dart';
+import 'package:hire_app/core/utils/extensions/navigator_state_extension.dart';
 import 'package:hire_app/core/utils/routes.dart';
 
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
@@ -41,9 +42,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     await Future.delayed(const Duration(seconds: 2), () {});
     if (mounted) {
       if (context.read<AuthCubit>().state.user != null) {
-        await Navigator.of(context).popAndPushNamed(Routes.home);
+        await Navigator.of(context).navigate(Routes.home);
       } else {
-        await Navigator.of(context).popAndPushNamed(Routes.login);
+        await Navigator.of(context).navigate(Routes.login);
       }
     }
   }

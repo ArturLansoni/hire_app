@@ -11,8 +11,8 @@ class CategoriesSection extends StatelessWidget {
   final void Function() onTap;
 
   static const categories = [
-    Category(title: 'Electrician', icon: Icons.electric_bolt),
-    Category(title: 'Janitor', icon: Icons.cleaning_services),
+    Category(title: 'Eletricista', icon: Icons.electric_bolt),
+    Category(title: 'Faxineiro', icon: Icons.cleaning_services),
     Category(title: 'Chef', icon: Icons.outdoor_grill),
   ];
 

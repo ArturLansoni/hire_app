@@ -24,7 +24,7 @@ class _ButtonState extends State<Button> {
       width: double.maxFinite,
       height: Tokens.size.ref16,
       child: FilledButton(
-        onPressed: widget.onPressed,
+        onPressed: widget.isLoading ? () {} : widget.onPressed,
         style: FilledButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(Tokens.radius.normal),

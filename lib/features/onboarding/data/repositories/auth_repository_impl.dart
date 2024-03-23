@@ -15,7 +15,8 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   Future<AuthState> signIn(String email, String password) async {
     try {
       await dataSource.signIn(email, password);
-      return const AuthState(AsyncStatus.success);
+      final user = dataSource.getCurrentUser();
+      return AuthState(AsyncStatus.success, user: user);
     } on FirebaseAuthException catch (e) {
       return switch (e.code) {
         'invalid-credentials' ||
