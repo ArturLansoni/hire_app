@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hire_app/core/utils/async_state.dart';
 import 'package:hire_app/core/utils/common_failures.dart';
