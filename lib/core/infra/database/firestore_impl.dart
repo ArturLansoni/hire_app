@@ -5,15 +5,16 @@ class FirestoreImpl implements DatabaseAdapter {
   FirestoreImpl(this._firestore);
   final FirebaseFirestore _firestore;
 
-  static const companiesCollection = 'companies';
-  static const ordersCollection = 'orders';
+  @override
+  FirebaseFirestore get instance => _firestore;
 
   @override
   Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>> getAll(
-    String collection,
-  ) async {
-    final result = await _firestore.collection(collection).get();
-    return result.docs;
+    String collection, {
+    Query? query,
+  }) async {
+    final result = await (query ?? _firestore.collection(collection)).get();
+    return result.docs as List<QueryDocumentSnapshot<Map<String, dynamic>>>;
   }
 
   @override
@@ -22,5 +23,14 @@ class FirestoreImpl implements DatabaseAdapter {
     required Map<String, dynamic> value,
   }) async {
     await _firestore.collection(collection).add(value);
+  }
+
+  @override
+  Future<DocumentReference> getDocReference(
+    String collection, {
+    required String docID,
+  }) async {
+    final doc = await _firestore.collection(collection).doc(docID).get();
+    return doc.reference;
   }
 }
