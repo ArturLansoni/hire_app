@@ -44,5 +44,6 @@
     "wednesday": "Wed",
     "thursday": "Thu",
     "friday": "Fri",
-    "saturday": "Sat"
+    "saturday": "Sat",
+    "schedulePageTitle": "Schedule"
 }

@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> onLoad() async {
     if (state.isLoading) return;
+    if (state.companies?.isNotEmpty ?? false) return;
     emit(state.copyWith(status: AsyncStatus.loading));
     final result = await repository.getCompanies();
     emit(result);

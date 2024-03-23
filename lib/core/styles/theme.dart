@@ -5,4 +5,7 @@ final appTheme = ThemeData(
   colorScheme: const ColorScheme.highContrastDark().copyWith(
     primary: Tokens.colors.primary,
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: Tokens.colors.primary,
+  ),
 );

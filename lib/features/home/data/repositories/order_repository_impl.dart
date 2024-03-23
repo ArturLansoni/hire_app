@@ -4,6 +4,7 @@ import 'package:hire_app/core/utils/async_state.dart';
 import 'package:hire_app/features/home/data/datasources/order_datasource.dart';
 import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/order_entity.dart';
+import 'package:hire_app/features/home/domain/entities/service_entity.dart';
 import 'package:hire_app/features/home/domain/repositories/order_repository.dart';
 
 class OrderRepositoryImpl implements OrderRepository {
@@ -13,7 +14,7 @@ class OrderRepositoryImpl implements OrderRepository {
   @override
   Future<OrderState> create({
     required String userId,
-    required List<String> serviceIds,
+    required List<ServiceEntity> services,
     required String description,
     required DateTime date,
   }) async {
@@ -23,10 +24,20 @@ class OrderRepositoryImpl implements OrderRepository {
           date: date,
           userId: userId,
           description: description,
-          serviceIds: serviceIds,
+          services: services,
         ),
       );
       return const OrderState(AsyncStatus.success);
+    } catch (_) {
+      return const OrderState(AsyncStatus.error);
+    }
+  }
+
+  @override
+  Future<OrderState> getAll(String userId) async {
+    try {
+      final orders = await dataSource.getOrders(userId);
+      return OrderState(AsyncStatus.success, orders: orders);
     } catch (_) {
       return const OrderState(AsyncStatus.error);
     }

@@ -368,6 +368,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sat'**
   String get saturday;
+
+  /// No description provided for @schedulePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get schedulePageTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

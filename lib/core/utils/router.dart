@@ -7,6 +7,7 @@ import 'package:hire_app/features/home/domain/cubits/order_cubit.dart';
 import 'package:hire_app/features/home/domain/entities/company_entity.dart';
 import 'package:hire_app/features/home/presentation/pages/home.dart';
 import 'package:hire_app/features/home/presentation/pages/order.dart';
+import 'package:hire_app/features/home/presentation/pages/schedule.dart';
 import 'package:hire_app/features/onboarding/domain/cubits/auth_cubit.dart';
 import 'package:hire_app/features/onboarding/presentation/pages/login.dart';
 import 'package:hire_app/features/onboarding/presentation/pages/register.dart';
@@ -44,5 +45,9 @@ class AppRouter {
         child: OrderPage(company: args!['company'] as CompanyEntity),
       );
     },
+    Routes.schedule: (context) => BlocProvider.value(
+          value: appDI<OrderCubit>(),
+          child: const SchedulePage(),
+        ),
   };
 }

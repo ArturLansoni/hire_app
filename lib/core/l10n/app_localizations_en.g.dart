@@ -141,4 +141,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saturday => 'Sat';
+
+  @override
+  String get schedulePageTitle => 'Schedule';
 }

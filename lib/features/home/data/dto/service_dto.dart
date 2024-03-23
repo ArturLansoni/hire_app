@@ -11,9 +11,8 @@ extension ServiceDTO on ServiceEntity {
       name: service['name'] as String,
       finalRange: (service['finalRange'] as int).toDouble(),
       initialRange: (service['initialRange'] as int).toDouble(),
-      imagesURL: (service['imagesURL'] as List)
-          .map((ref) => (ref as DocumentReference).id)
-          .toList(),
+      imagesURL:
+          (service['imagesURL'] as List).map((ref) => ref as String).toList(),
     );
   }
 }
