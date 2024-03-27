@@ -78,36 +78,38 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Form(
                   key: _formKey,
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        autofillHints: const [AutofillHints.email],
-                        textInputAction: TextInputAction.next,
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          labelText: l10n.loginPageEmailLabel,
+                  child: AutofillGroup(
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          autofillHints: const [AutofillHints.email],
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            labelText: l10n.loginPageEmailLabel,
+                          ),
+                          validator: (value) =>
+                              Validators.email(value, l10n: l10n),
                         ),
-                        validator: (value) =>
-                            Validators.email(value, l10n: l10n),
-                      ),
-                      SizedBox(height: Tokens.size.ref3),
-                      PasswordFormField(
-                        label: l10n.loginPagePasswordLabel,
-                        controller: _passwordController,
-                        validator: (value) =>
-                            Validators.password(value, l10n: l10n),
-                        onFieldSubmitted: (_) => _onSubmit(),
-                        textInputAction: TextInputAction.done,
-                      ),
-                      SizedBox(height: Tokens.size.ref6),
-                      Button(
-                        isLoading: state.isLoading,
-                        onPressed: _onSubmit,
-                        label: l10n.loginPageSignInButton,
-                      ),
-                    ],
+                        SizedBox(height: Tokens.size.ref3),
+                        PasswordFormField(
+                          label: l10n.loginPagePasswordLabel,
+                          controller: _passwordController,
+                          validator: (value) =>
+                              Validators.password(value, l10n: l10n),
+                          onFieldSubmitted: (_) => _onSubmit(),
+                          textInputAction: TextInputAction.done,
+                        ),
+                        SizedBox(height: Tokens.size.ref6),
+                        Button(
+                          isLoading: state.isLoading,
+                          onPressed: _onSubmit,
+                          label: l10n.loginPageSignInButton,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Column(

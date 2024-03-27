@@ -89,47 +89,50 @@ class _RegisterPageState extends State<RegisterPage> {
                   SizedBox(height: Tokens.size.ref6),
                   Form(
                     key: _formKey,
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          controller: _emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          autofillHints: const [AutofillHints.email],
-                          textInputAction: TextInputAction.next,
-                          decoration: InputDecoration(
-                            border: const OutlineInputBorder(),
-                            labelText: l10n.loginPageEmailLabel,
+                    child: AutofillGroup(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            autofillHints: const [AutofillHints.email],
+                            textInputAction: TextInputAction.next,
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              labelText: l10n.loginPageEmailLabel,
+                            ),
+                            validator: (value) =>
+                                Validators.email(value, l10n: l10n),
                           ),
-                          validator: (value) =>
-                              Validators.email(value, l10n: l10n),
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                        PasswordFormField(
-                          label: l10n.loginPagePasswordLabel,
-                          controller: _passwordController,
-                          validator: (value) =>
-                              Validators.password(value, l10n: l10n),
-                          textInputAction: TextInputAction.next,
-                        ),
-                        SizedBox(height: Tokens.size.ref3),
-                        PasswordFormField(
-                          label: l10n.registerPagePasswordConfirmationLabel,
-                          controller: _passwordConfirmationController,
-                          validator: (value) => Validators.passwordConfirmation(
-                            value,
-                            l10n: l10n,
-                            passwordValue: _passwordController.text,
+                          SizedBox(height: Tokens.size.ref3),
+                          PasswordFormField(
+                            label: l10n.loginPagePasswordLabel,
+                            controller: _passwordController,
+                            validator: (value) =>
+                                Validators.password(value, l10n: l10n),
+                            textInputAction: TextInputAction.next,
                           ),
-                          onFieldSubmitted: (_) => _onSubmit(),
-                          textInputAction: TextInputAction.done,
-                        ),
-                        SizedBox(height: Tokens.size.ref6),
-                        Button(
-                          isLoading: state.isLoading,
-                          onPressed: _onSubmit,
-                          label: l10n.registerPageSubmitButton,
-                        ),
-                      ],
+                          SizedBox(height: Tokens.size.ref3),
+                          PasswordFormField(
+                            label: l10n.registerPagePasswordConfirmationLabel,
+                            controller: _passwordConfirmationController,
+                            validator: (value) =>
+                                Validators.passwordConfirmation(
+                              value,
+                              l10n: l10n,
+                              passwordValue: _passwordController.text,
+                            ),
+                            onFieldSubmitted: (_) => _onSubmit(),
+                            textInputAction: TextInputAction.done,
+                          ),
+                          SizedBox(height: Tokens.size.ref6),
+                          Button(
+                            isLoading: state.isLoading,
+                            onPressed: _onSubmit,
+                            label: l10n.registerPageSubmitButton,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Column(
